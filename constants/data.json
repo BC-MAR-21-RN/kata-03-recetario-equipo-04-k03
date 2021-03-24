@@ -5,6 +5,45 @@
         "type": "Trending",
         "ingredients":[
             {
+                "name":"Harina Blanca",
+                "quantity":"100 gramos"
+            },
+            {
+                "name":"Levadura Seca",
+                "quantity":"2.5 gramos"
+            },
+            {
+                "name":"Azùcar",
+                "quantity":"1/2 cucharada"
+            },
+            {
+                "name":"Aceite Extra Virgen",
+                "quantity":"1/2 cucharada"
+            },
+            {
+                "name":"Sal de mesa",
+                "quantity":"1 pizca"
+            },
+            {
+                "name":"Pasta de tomate",
+                "quantity":"21 gramos"
+            },
+            {
+                "name":"De Peperoni",
+                "quantity":"1/2 taza"
+            },
+            {
+                "name":"De Queso Mozarella",
+                "quantity":"1/2 taza"
+            }
+        ]
+    },
+    {
+        "image": "https://i.pinimg.com/564x/eb/7d/0f/eb7d0fd9c1538b992a4454c623826fa3.jpg",
+        "name": "Chcolate Cake",
+        "type": "Trending",
+        "ingredients":[
+            {
                 "name":"puff pastry",
                 "quantity":"1 sheet"
             },
@@ -15,18 +54,33 @@
         ]
     },
     {
-        "image": "https://i.pinimg.com/564x/1c/21/02/1c21027542b1e90afb3d154f41370823.jpg",
-        "name": "Chcolate Chip",
-        "type": "Trending"
-    },
-    {
-        "image": "https://i.pinimg.com/564x/1c/21/02/1c21027542b1e90afb3d154f41370823.jpg",
+        "image": "https://i.pinimg.com/564x/38/64/6c/38646c9c3abbd87293bc9abfa56f200b.jpg",
         "name": "PancakeCups",
-        "type": "Trending"
+        "type": "Trending",
+        "ingredients":[
+            {
+                "name":"puff pastry",
+                "quantity":"1 sheet"
+            },
+            {
+                "name":"puff pastry",
+                "quantity":"1 sheet"
+            }
+        ]
     },
     {
-        "image": "https://i.pinimg.com/564x/1c/21/02/1c21027542b1e90afb3d154f41370823.jpg",
+        "image": "https://i.pinimg.com/564x/52/4b/70/524b701a1f84ec75674e34b8be65ead5.jpg",
         "name": "Meetball Sub Bake",
-        "type": "Recent"
+        "type": "Recent",
+        "ingredients":[
+            {
+                "name":"puff pastry",
+                "quantity":"1 sheet"
+            },
+            {
+                "name":"puff pastry",
+                "quantity":"1 sheet"
+            }
+        ]
     }
 ]
