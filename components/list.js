@@ -3,7 +3,7 @@ import { View, FlatList } from 'react-native';
 
 import Card from "../components/card";
 
-  const List = ({ list }) => {
+  const List = ({ list, big }) => {
     return (
       <View>
         <FlatList
@@ -12,7 +12,7 @@ import Card from "../components/card";
           horizontal
           keyExtractor={item => `${item.name}`}
           renderItem={({ item, index }) => (
-            <Card key={index} {...item} />
+            <Card key={index} {...item} big={big}/>
           )}
         />
       </View>
