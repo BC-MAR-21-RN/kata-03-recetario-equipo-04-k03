@@ -4,6 +4,8 @@ import { Theme } from '../constants';
 
 const { FONTS, COLORS, SIZES } = Theme;
 
+const HEIGHT = 280;
+
 const Card = ({ image, name, big }) => {
     return (
         <View style={big ? style.cardBig : style.cardContainer}>
@@ -36,13 +38,13 @@ const style = StyleSheet.create({
     },
     cardContainer: {
         width: 180,
-        height: 280,
+        height: HEIGHT,
         paddingVertical: SIZES.padding * 2,
         paddingHorizontal: SIZES.padding,
     },
     cardBig: {
         width: 220,
-        height: 300,
+        height: HEIGHT * 1.6,
         paddingVertical: SIZES.padding * 2,
         paddingHorizontal: SIZES.padding,
     }
