@@ -1,16 +1,15 @@
-import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { Theme } from '../constants';
 
 const { FONTS, COLORS, SIZES } = Theme;
-
 const HEIGHT = 280;
 
 const Card = ({ image, name, big }) => {
     return (
         <View style={big ? style.cardBig : style.cardContainer}>
             <View style={style.imageContainer}> 
-                <Image source={{uri: image}} style={style.image}/>
+                <Image source={{ uri: image }} style={style.image}/>
             </View>
             <View style={style.bodyContainer}>
                   <Text style={style.bodyText} numberOfLines={2}>{ name }</Text>

@@ -9,7 +9,7 @@ const { COLORS, FONTS } = Theme;
       backgroundColor: COLORS.secondary
     },
     textTitle:{
-      color:COLORS.primary,
+      color: COLORS.primary,
       ...FONTS.h3
       
     }
