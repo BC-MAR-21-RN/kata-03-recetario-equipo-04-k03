@@ -1,20 +1,21 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Theme } from '../constants';
-
+import { ModalContext } from '../context/providers/ModalProvider'
 const { FONTS, COLORS, SIZES } = Theme;
 const HEIGHT = 280;
 
 const Card = ({ image, name, big }) => {
+    const { modal, setModal } = useContext(ModalContext);
     return (
-        <View style={big ? style.cardBig : style.cardContainer}>
-            <View style={style.imageContainer}> 
-                <Image source={{ uri: image }} style={style.image}/>
+        <TouchableOpacity onPress={() => setModal(name)} style={big ? style.cardBig : style.cardContainer}>
+            <View style={style.imageContainer}>
+                <Image source={{ uri: image }} style={style.image} />
             </View>
             <View style={style.bodyContainer}>
-                  <Text style={style.bodyText} numberOfLines={2}>{ name }</Text>
+                <Text style={style.bodyText} numberOfLines={2}>{name}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
@@ -28,9 +29,9 @@ const style = StyleSheet.create({
         borderRadius: SIZES.radius,
         ...StyleSheet.absoluteFillObject
     },
-    bodyText: { 
-        ...FONTS.body3, 
-    color: COLORS.white,
+    bodyText: {
+        ...FONTS.body3,
+        color: COLORS.white,
     },
     bodyContainer: {
         marginVertical: SIZES.padding

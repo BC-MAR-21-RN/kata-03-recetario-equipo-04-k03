@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView,Text, ScrollView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text, ScrollView, StatusBar } from 'react-native';
 import data from './constants/data.json';
 import styles from './App.styles'
 import { SearchBar, List } from './components';
+import WithContext from './context'
+import FoodModal from './components/foodModal'
 
-export default function App() {
+
+function App() {
   const trendingList = data.filter(elem => {
     return elem.type === "Trending"
   });
@@ -14,16 +17,21 @@ export default function App() {
   });
 
   return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <ScrollView>
-          <SearchBar />
-          <Text style={styles.textTitle}>TRENDING</Text>
-          <List list={trendingList} />
-          <Text style={styles.textTitle}>RECENTS</Text>
-          <List big list={recentList} />
-        </ScrollView>
-      </SafeAreaView>
-    </View>
+    <>
+    <StatusBar barStyle="light-content"/>
+      <View style={styles.container}>
+        <SafeAreaView>
+          <ScrollView>
+            <SearchBar />
+            <Text style={styles.textTitle}>TRENDING</Text>
+            <List list={trendingList} />
+            <Text style={styles.textTitle}>RECENTS</Text>
+            <List big list={recentList} />
+          </ScrollView>
+        </SafeAreaView>
+      </View>
+      <FoodModal />
+    </>
   );
 }
+export default WithContext(App);

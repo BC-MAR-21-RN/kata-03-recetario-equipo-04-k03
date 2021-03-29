@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, TextInput, StyleSheet } from 'react-native';
 import { Theme, Icons } from '../constants';
 import {useInput} from '../customHooks/useInput'
-const { COLORS, SIZES } = Theme;
+const { COLORS, SIZES, FONTS } = Theme;
 
 const searchBar = () => {
     const [searchProps,resetInput]=useInput('');
@@ -24,24 +24,26 @@ export default searchBar
 
 const styles = StyleSheet.create({
     searchContainer: {
+        height: 50,
         width: "90%",
-        height: 40,
-        backgroundColor: COLORS.lightGray,
-        flexDirection: "row",
+        marginVertical: 30,
         alignSelf: "center",
+        flexDirection: "row",
         alignItems: "center",
         paddingHorizontal: 10,
         borderRadius: SIZES.radius,
-        marginVertical: SIZES.padding
+        backgroundColor: COLORS.lightGray
     },
     icons: {
-        width: 15,
-        height: 15,
+        width: 20,
+        height: 20,
         tintColor: COLORS.white
     },
     textInput: {
-        width: "90%",
+        width: "88%",
+        height: 35,
         paddingHorizontal: 10,
-        color: COLORS.white
+        color: COLORS.white,
+        ...FONTS.body2,
     }
 })
