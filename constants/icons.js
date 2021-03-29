@@ -1,5 +1,5 @@
-const search = require("../assets/icons/serach.png");
-const mic = require("../assets/icons/mic.js");
+const search = require("../assets/icons/search.png");
+const mic = require("../assets/icons/mic.png");
 
 export default {
     search,
