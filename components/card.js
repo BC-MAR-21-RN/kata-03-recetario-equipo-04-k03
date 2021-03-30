@@ -8,19 +8,19 @@ const HEIGHT = 280;
 const Card = ({ image, name, big }) => {
     const { modal, setModal } = useContext(ModalContext);
     return (
-        <TouchableOpacity onPress={() => setModal(name)} style={big ? style.cardBig : style.cardContainer}>
-            <View style={style.imageContainer}>
-                <Image source={{ uri: image }} style={style.image} />
+        <TouchableOpacity onPress={() => setModal(name)} style={ big ? styles.cardBig : styles.cardContainer }>
+            <View style={styles.imageContainer}>
+                <Image source={{ uri: image }} style={styles.image} />
             </View>
-            <View style={style.bodyContainer}>
-                <Text style={style.bodyText} numberOfLines={2}>{name}</Text>
+            <View style={styles.bodyContainer}>
+                <Text style={ big ? styles.bodyTextBig : styles.bodyText } numberOfLines={2}>{name}</Text>
             </View>
         </TouchableOpacity>
     )
 }
 
 export default Card;
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     imageContainer: {
         width: "100%",
         height: "60%",
@@ -31,6 +31,10 @@ const style = StyleSheet.create({
     },
     bodyText: {
         ...FONTS.body3,
+        color: COLORS.white,
+    },
+    bodyTextBig: {
+        ...FONTS.body2,
         color: COLORS.white,
     },
     bodyContainer: {

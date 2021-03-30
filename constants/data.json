@@ -3,6 +3,7 @@
         "image": "https://i.pinimg.com/564x/1c/21/02/1c21027542b1e90afb3d154f41370823.jpg",
         "name": "Peperoni Pizza Pockets",
         "type": "Trending",
+        "servings": "3",
         "ingredients":[
             {
                 "name":"Harina Blanca",
@@ -42,6 +43,7 @@
         "image": "https://i.pinimg.com/564x/eb/7d/0f/eb7d0fd9c1538b992a4454c623826fa3.jpg",
         "name": "Chcolate Cake",
         "type": "Trending",
+        "servings": "3",
         "ingredients":[
             {
                 "name":"puff pastry",
@@ -57,6 +59,7 @@
         "image": "https://i.pinimg.com/564x/38/64/6c/38646c9c3abbd87293bc9abfa56f200b.jpg",
         "name": "PancakeCups",
         "type": "Trending",
+        "servings": "3",
         "ingredients":[
             {
                 "name":"puff pastry",
@@ -70,8 +73,9 @@
     },
     {
         "image": "https://i.pinimg.com/564x/52/4b/70/524b701a1f84ec75674e34b8be65ead5.jpg",
-        "name": "Meetball Sub Bake",
+        "name": "Meetball Sub Bake ",
         "type": "Recent",
+        "servings": "3",
         "ingredients":[
             {
                 "name":"puff pastry",
