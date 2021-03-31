@@ -10,8 +10,8 @@ const { COLORS, FONTS } = Theme;
     },
     textTitle:{
       color: COLORS.primary,
-      ...FONTS.h3
-      
+      ...FONTS.h3,
+      marginLeft: 10,
     }
   });
 export default AppStyles;

@@ -1,83 +1,37 @@
 import React, { useState, useContext } from "react";
-import { ImageBackground, Modal, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
+import { ImageBackground, Modal, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { ModalContext } from '../context/providers/ModalProvider'
 import { Theme, Icons } from '../constants';
 import data from '../constants/data.json';
+import IngredientsList from "./ingredientsList";
+import BannerModal from "./bannerModal";
 const { COLORS, FONTS } = Theme;
 
 const ICONS_SIZE = 35;
 
 const FoodModal = () => {
     const { modal, setModal } = useContext(ModalContext);
-    const [ isToggled, setIsToggled ] = useState(false);
-    const { image, name, type, ingredients, servings } = modal && data.find(item => item.name === modal)
+
+    const { image, name, type, servings, ingredients } = modal && data.find(item => item.name === modal)
     return (
         <Modal
             animationType="slide"
-            transparent={true}
             visible={Boolean(modal)}
             onRequestClose={() => setModal('')}
         >
-            <ScrollView style={styles.modalContainer} bounces={false}>
-                <ImageBackground
-                    source={{ uri: image }}
-                    style={styles.image}
-                    imageStyle={{ opacity: 0.5 }}
-                >
-                    <View style={styles.bannerContainer}>
-                        <TouchableOpacity onPress={() => setIsToggled(!isToggled)}>
-                            <Image 
-                                source={
-                                    isToggled ?
-                                    Icons.heart_filled
-                                    : Icons.heart_outline
-                                } 
-                                style={
-                                    [styles.likeBtn], 
-                                    { 
-                                        tintColor: isToggled ? 
-                                        COLORS.red 
-                                        : COLORS.white
-                                    }
-                                } 
-                                resizeMode="contain"
-                            />
-                        </TouchableOpacity>
-                        <View style={{ flexDirection: "row" }}>
-                            <Image source={Icons.share} style={styles.shareBtn} resizeMode="contain"/>
-                            <TouchableOpacity activeOpacity={0.8} onPress={() => setModal(!modal)}>
-                                <Image source={Icons.close} style={styles.closeBtn} resizeMode="contain"/>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.footherContainer}>
-                        <Text style={styles.textType}>{type}</Text>
-                        <Text style={styles.textName}>{name}</Text>
-
-                    </View>
-                </ImageBackground>
-                <View style={{ padding: 20 }}>
-                    <Text style={styles.textBody2}>Ingredients</Text>
-                    <Text style={styles.textBody3}>for {servings} servings</Text>
-                    <View style={{ marginVertical: 30 }}>
-                        {
-                            ingredients?.map(({ name, quantity }) => {
-                                return (
-                                    <View key={name}>
-                                        <View style={styles.ingredientContainer}>
-                                            <Text style={styles.textBody3}>{name}</Text>
-                                            <Text style={styles.textBody3}>{quantity}</Text>
-                                        </View>
-                                        <View style={styles.line}/>
-                                    </View>
-                                )
-                            })
-                        }
-                    </View>
+            <ImageBackground
+                source={{ uri: image }}
+                style={styles.image}
+                imageStyle={{ opacity: 0.6, height: '100%', backgroundColor: 'rgba(0,0, 0, 0.8)' }}
+            >
+                <BannerModal setModal={setModal} modal={modal}/>
+                <View style={styles.footherContainer}>
+                    <Text style={styles.textType}>{type}</Text>
+                    <Text style={styles.textName}>{name}</Text>
                 </View>
-            </ScrollView>
+            </ImageBackground>
+            <IngredientsList servings={servings} ingredients={ingredients} />
         </Modal>
-
     );
 };
 
@@ -91,7 +45,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: "100%",
-        height: 400,
+        height: '50%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -101,8 +55,8 @@ const styles = StyleSheet.create({
         height: 400,
     },
     bannerContainer: {
-        padding: 40,
-        paddingTop: 70,
+        padding: Platform.OS === 'ios' ? 40 : 30,
+        paddingTop: Platform.OS === 'ios' ? 70 : 30,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
