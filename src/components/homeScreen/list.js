@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
 
-import Card from "../components/card";
+import Card from "./card";
 
   const List = ({ list, big }) => {
     return (
